@@ -84,10 +84,6 @@ new location.
 Modifiers are the key to transforming content inside of your stub files. You can separate multiple modifiers with the
 pipe `|` character.
 
-### camel
-
-The `camel` modifier transforms the given value to camelCase.
-
 ### basename
 
 The `basename` modifier will return the basename of a given class string:
@@ -96,6 +92,10 @@ The `basename` modifier will return the basename of a given class string:
 // class: Some\Deeply\Nested\Thing
 class {{ class | basename }} {} // class Thing {}
 ```
+
+### camel
+
+The `camel` modifier transforms the given value to camelCase.
 
 ### kebab
 
