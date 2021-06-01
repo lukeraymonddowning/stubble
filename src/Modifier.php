@@ -66,8 +66,8 @@ class Modifier
     public function classname($content)
     {
         return Str::of($this->view($content))
-            ->explode(".")
-            ->map(fn($part) => Str::studly($part))
-            ->join("\\");
+            ->explode('.')
+            ->map(fn ($part) => Str::studly($part))
+            ->join('\\');
     }
 }
