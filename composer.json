@@ -1,0 +1,32 @@
+{
+    "name": "lukeraymonddowning/stubble",
+    "description": "A templating engine for stub files",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "luke",
+            "email": "lukeraymonddowning@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^7.0|^8.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^5.4",
+        "phpunit/phpunit": "^9.5",
+        "pestphp/pest-plugin-expectations": "^1.3",
+        "orchestra/testbench": "^6.18"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lukeraymonddowning\\Stubble\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lukeraymonddowning\\Stubble\\Tests\\": "tests"
+        }
+    }
+}
