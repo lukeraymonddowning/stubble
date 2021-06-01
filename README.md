@@ -68,7 +68,7 @@ class {{ class | pascal }} extends Component {
 Note that we no longer have to reference 2 different variables. Instead, we add a *modifier* to the variable which 
 describes how it should be transformed before being replaced. 
 
-Now, in our Artisan command, we can use the `pipe` method to easily publish our stub to the user's application:
+Now, in our Artisan command, we can use the `publish` method to easily publish our stub to the user's application:
 
 ```php
 public function handle() {
