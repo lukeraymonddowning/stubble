@@ -40,6 +40,8 @@ class Stubble
      */
     public static function publish(string $stubPath, string $destinationPath, $values)
     {
+        $destinationPath = (new static())->replace($destinationPath, $values);
+
         File::ensureDirectoryExists(Str::beforeLast($destinationPath, '/'));
         return File::put($destinationPath, static::file($stubPath, $values));
     }

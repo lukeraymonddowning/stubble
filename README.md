@@ -191,6 +191,17 @@ You can do that using the replace method:
 $filename = (new Stubble)->replace("path/to/your/{{ file | kebab }}.php", ['file' => $this->argument('name')]);
 ```
 
+> Tip! When using the `publish` command, you can use tags directly in the $destinationPath argument for no sweat 
+> dynamic filenames.
+
+```php
+Stubble::publish(
+    'path/to/stub.php',
+    'Path/To/Your/{{ class | basename }}.php',
+    ['class' => $this->argument('class')]
+);
+```
+
 ## Customising stub tags
 
 By default, Stubble will use `{{` and `}}` as the start and end of tags respectively. You are free to customise these
