@@ -38,4 +38,14 @@ class Modifier
     {
         return Str::lower($content);
     }
+
+    public function plural($content)
+    {
+        return Str::plural($content);
+    }
+
+    public function singular($content)
+    {
+        return Str::singular($content);
+    }
 }

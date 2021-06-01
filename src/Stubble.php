@@ -40,7 +40,7 @@ class Stubble
      */
     public static function pipe(string $stubPath, string $destinationPath, $values)
     {
-        File::ensureDirectoryExists(Str::beforeLast($stubPath, '/'));
+        File::ensureDirectoryExists(Str::beforeLast($destinationPath, '/'));
         return File::put($destinationPath, static::file($stubPath, $values));
     }
 
