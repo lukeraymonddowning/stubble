@@ -38,10 +38,10 @@ class Stubble
      * @param Enumerable|array $values
      * @return bool
      */
-    public static function pipe(string $path, string $destination, $values)
+    public static function pipe(string $stubPath, string $destinationPath, $values)
     {
-        File::ensureDirectoryExists(Str::beforeLast($destination, '/'));
-        return File::put($destination, static::file($path, $values));
+        File::ensureDirectoryExists(Str::beforeLast($stubPath, '/'));
+        return File::put($destinationPath, static::file($stubPath, $values));
     }
 
     /**
