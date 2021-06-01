@@ -38,7 +38,7 @@ class Stubble
      * @param Enumerable|array $values
      * @return bool
      */
-    public static function pipe(string $stubPath, string $destinationPath, $values)
+    public static function publish(string $stubPath, string $destinationPath, $values)
     {
         File::ensureDirectoryExists(Str::beforeLast($destinationPath, '/'));
         return File::put($destinationPath, static::file($stubPath, $values));

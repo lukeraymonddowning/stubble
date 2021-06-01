@@ -31,6 +31,6 @@ class StubFileTest extends TestCase
             ->with('an/example/file.php', 'HelloWorld, most honoured guest!')
             ->andReturnTrue();
 
-        Stubble::pipe('example/file.php', 'an/example/file.php', ['greetings' => 'hello world']);
+        Stubble::publish('example/file.php', 'an/example/file.php', ['greetings' => 'hello world']);
     }
 }
