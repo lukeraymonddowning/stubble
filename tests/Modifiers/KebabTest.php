@@ -1,21 +1,18 @@
 <?php
 
-
 namespace Lukeraymonddowning\Stubble\Tests\Modifiers;
-
 
 use Lukeraymonddowning\Stubble\Stubble;
 use Lukeraymonddowning\Stubble\Tests\TestCase;
 
 class KebabTest extends TestCase
 {
-
     /**
      * @dataProvider kebabDataProvider
      */
     public function test_it_converts_replaced_values_to_kebab_case($content, $values, $expectation)
     {
-        $content = (new Stubble)->replace($content, $values);
+        $content = (new Stubble())->replace($content, $values);
 
         expect($content)->toEqual($expectation);
     }
@@ -28,5 +25,4 @@ class KebabTest extends TestCase
             ['{{kebab|kebab}} extends BaseClass', ['kebab' => 'CoolBeans'], 'cool-beans extends BaseClass'],
         ];
     }
-
 }

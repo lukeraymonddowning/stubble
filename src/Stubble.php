@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Lukeraymonddowning\Stubble;
-
 
 use File;
 use Illuminate\Support\Collection;
@@ -31,7 +29,7 @@ class Stubble
      */
     public static function file(string $path, $values)
     {
-        return (new static)->replace(File::get($path), $values);
+        return (new static())->replace(File::get($path), $values);
     }
 
     /**
@@ -42,7 +40,7 @@ class Stubble
      */
     public static function pipe(string $path, string $destination, $values)
     {
-        File::ensureDirectoryExists(Str::beforeLast($destination, "/"));
+        File::ensureDirectoryExists(Str::beforeLast($destination, '/'));
         return File::put($destination, static::file($path, $values));
     }
 
@@ -57,9 +55,9 @@ class Stubble
 
         return $this->findReplaceableValues($content)
             ->reduce(
-                fn($content, $pendingReplacement) => $content->replace(
+                fn ($content, $pendingReplacement) => $content->replace(
                     $pendingReplacement->raw(),
-                    $pendingReplacement->modify($values->first(fn($value, $key) => $pendingReplacement->matches($key)))
+                    $pendingReplacement->modify($values->first(fn ($value, $key) => $pendingReplacement->matches($key)))
                 ),
                 Str::of($content)
             )
@@ -81,7 +79,7 @@ class Stubble
 
         return collect($matches[0])
             ->zip($matches[1])
-            ->map(fn($matchSet) => [$matchSet[0], Str::of($matchSet[1])->remove(" ")->explode("|")])
-            ->map(fn($match) => new PendingReplacement($match[0], ...$match[1]));
+            ->map(fn ($matchSet) => [$matchSet[0], Str::of($matchSet[1])->remove(' ')->explode('|')])
+            ->map(fn ($match) => new PendingReplacement($match[0], ...$match[1]));
     }
 }

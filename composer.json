@@ -28,5 +28,9 @@
         "psr-4": {
             "Lukeraymonddowning\\Stubble\\Tests\\": "tests"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "cs": "php-cs-fixer fix"
     }
 }

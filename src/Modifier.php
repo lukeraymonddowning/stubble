@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Lukeraymonddowning\Stubble;
-
 
 use Illuminate\Support\Traits\Macroable;
 use Str;
@@ -40,5 +38,4 @@ class Modifier
     {
         return Str::lower($content);
     }
-
 }

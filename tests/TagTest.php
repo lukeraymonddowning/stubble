@@ -1,22 +1,19 @@
 <?php
 
-
 namespace Lukeraymonddowning\Stubble\Tests;
-
 
 use Lukeraymonddowning\Stubble\PendingReplacement;
 use Lukeraymonddowning\Stubble\Stubble;
 
 class TagTest extends TestCase
 {
-
     /**
      * @dataProvider tagDataProvider
      */
     public function test_it_can_define_tags($openingTag, $closingTag, $content, $expectation)
     {
         Stubble::defineTags($openingTag, $closingTag);
-        $replacements = (new Stubble)->findReplaceableValues($content);
+        $replacements = (new Stubble())->findReplaceableValues($content);
         expect($replacements)->toEqual(collect($expectation));
     }
 
@@ -26,7 +23,7 @@ class TagTest extends TestCase
             [
                 '{{',
                 '}}',
-                "Hello {{ world }}, my name is {{ name }}",
+                'Hello {{ world }}, my name is {{ name }}',
                 [
                     new PendingReplacement('{{ world }}', 'world'),
                     new PendingReplacement('{{ name }}', 'name')
@@ -35,7 +32,7 @@ class TagTest extends TestCase
             [
                 '{{',
                 '}}',
-                "Hello {{ world | studly }}, my name is {{ name | camel }}",
+                'Hello {{ world | studly }}, my name is {{ name | camel }}',
                 [
                     new PendingReplacement('{{ world | studly }}', 'world', 'studly'),
                     new PendingReplacement('{{ name | camel }}', 'name', 'camel')
@@ -44,16 +41,15 @@ class TagTest extends TestCase
             [
                 '--',
                 '--',
-                "Hello {{ world | studly }}, my --name-- is {{ John | camel }}",
+                'Hello {{ world | studly }}, my --name-- is {{ John | camel }}',
                 [new PendingReplacement('--name--', 'name')]
             ],
             [
                 '--',
                 '}}',
-                "Hello {{ world | studly }}, my --name-- is {{ John | camel }}",
+                'Hello {{ world | studly }}, my --name-- is {{ John | camel }}',
                 [new PendingReplacement('--name-- is {{ John | camel }}', 'name--is{{John', 'camel')]
             ]
         ];
     }
-
 }

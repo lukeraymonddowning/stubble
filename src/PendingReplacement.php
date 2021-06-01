@@ -1,12 +1,9 @@
 <?php
 
-
 namespace Lukeraymonddowning\Stubble;
-
 
 class PendingReplacement
 {
-
     protected string $raw;
     protected string $key;
     protected array $modifiers = [];
@@ -30,8 +27,7 @@ class PendingReplacement
 
     public function modify($value)
     {
-        $modifier = new Modifier;
-        return collect($this->modifiers)->reduce(fn($value, $mod) => $modifier->$mod($value), $value);
+        $modifier = new Modifier();
+        return collect($this->modifiers)->reduce(fn ($value, $mod) => $modifier->$mod($value), $value);
     }
-
 }
