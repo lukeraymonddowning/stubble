@@ -20,8 +20,8 @@ class BasenameTest extends TestCase
     public function basenameDataProvider()
     {
         return [
-            ['class {{ class | basename }} {}', ['class' => "Some\\Deeply\\Nested\\Thing"], 'class Thing {}'],
-            ['class {{ class | basename }} {}', ['class' => "random value"], 'class random value {}'],
+            ['class {{ class | basename }} {}', ['class' => 'Some\\Deeply\\Nested\\Thing'], 'class Thing {}'],
+            ['class {{ class | basename }} {}', ['class' => 'random value'], 'class random value {}'],
         ];
     }
 }
