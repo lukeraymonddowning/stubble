@@ -79,4 +79,55 @@ public function handle() {
 Stubble will take care of copying the file, performing the necessary content transformations, and publishing it to the
 new location.
 
+## Available Modifiers
 
+Modifiers are the key to transforming content inside of your stub files. You can separate multiple modifiers with the
+pipe `|` character.
+
+### camel
+
+The `camel` modifier transforms the given value to camelCase.
+
+### kebab
+
+The `kebab` modifier transforms the given value to kebab-case.
+
+### lower
+
+The `lower` modifier transforms the given value to lowercase.
+
+### plural
+
+The `plural` modifier transforms the given value to the plural version. For example, 'duck' would become 'ducks'.
+
+### singular
+
+The `singular` modifier transforms the given value to the singular version. For example, 'ducks' would become 'duck'.
+
+### snake
+
+The `snake` modifier transforms the given value to snake_case.
+
+### studly
+
+The `studly` modifier transforms the given value to StudlyCase.
+
+### upper
+
+The `upper` modifier transforms the given value to UPPERCASE.
+
+## Adding New Modifiers
+
+The `Lukeraymonddowning\Stubble\Modifier` class is `Macroable`, allowing you to define your very own modifiers. We 
+suggest you do this in the `boot` method of your `ServiceProvider`. Each modifier should return a modified string
+value.
+
+```php
+// ServiceProvider
+Modifier::macro('vowelless', function ($content) {
+    return Str::of($content)->remove(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'])->__toString();
+});
+
+// .stub
+Hello {{ example | vowelless }} // All vowels will be removed from the value of 'example'
+```
