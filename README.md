@@ -42,7 +42,7 @@ You have a stub file for the class that might look like this:
 class {{ class }} extends Component {
 
     public function render() {
-        return view({{ view }});
+        return view('{{ view }}');
     }
 
 }
