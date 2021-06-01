@@ -173,6 +173,15 @@ Modifier::macro('vowelless', function ($content) {
 Hello {{ example | vowelless }} // All vowels will be removed from the value of 'example'
 ```
 
+## Replacing a file's contents without publishing
+
+If you want to perform tag transformations on a file, but return it as a string to perform extra work on it, you can
+use the `file` method:
+
+```php
+$content = Stubble::file('path/to/your/stub.php.stub', ['key' => 'value']);
+```
+
 ## Converting values outside of stub files
 
 Sometimes, you may want to use the power of Stubble outside of stub files, perhaps for the filename of a given stub.
