@@ -116,7 +116,7 @@ The `studly` modifier transforms the given value to StudlyCase.
 
 The `upper` modifier transforms the given value to UPPERCASE.
 
-## Adding New Modifiers
+## Adding new Modifiers
 
 The `Lukeraymonddowning\Stubble\Modifier` class is `Macroable`, allowing you to define your very own modifiers. We 
 suggest you do this in the `boot` method of your `ServiceProvider`. Each modifier should return a modified string
@@ -130,4 +130,23 @@ Modifier::macro('vowelless', function ($content) {
 
 // .stub
 Hello {{ example | vowelless }} // All vowels will be removed from the value of 'example'
+```
+
+## Converting values outside of stub files
+
+Sometimes, you may want to use the power of Stubble outside of stub files, perhaps for the filename of a given stub.
+You can do that using the replace method:
+
+```php
+$filename = (new Stubble)->replace("path/to/your/{{ file | kebab }}.php", ['file' => $this->argument('name')]);
+```
+
+## Customising stub tags
+
+By default, Stubble will use `{{` and `}}` as the start and end of tags respectively. You are free to customise these
+locators using the `defineTags` method:
+
+```php
+Stubble::defineTags('--', '--'); // Use -- as the tag locators
+Stubble::defineTags('{{', '--'); // Use {{ as the starting locator and -- as the ending locator
 ```
