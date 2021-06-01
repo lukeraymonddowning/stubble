@@ -116,6 +116,16 @@ The `studly` modifier transforms the given value to StudlyCase.
 
 The `upper` modifier transforms the given value to UPPERCASE.
 
+### view
+
+The `view` modifier transforms a class string to a valid view destination:
+
+```php
+// class: Some\ProjectClass
+
+return view('{{ class | view }}'); // some.project-class
+```
+
 ## Chaining multiple Modifiers
 
 Modifiers can be chained together to perform multiple transformations. They will be applied in order from left to right.

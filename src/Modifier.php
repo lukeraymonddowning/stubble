@@ -48,4 +48,13 @@ class Modifier
     {
         return Str::singular($content);
     }
+
+    public function view($content)
+    {
+        return Str::of($content)
+            ->replace("\\", ".")
+            ->kebab()
+            ->replace(".-", ".")
+            ->__toString();
+    }
 }
