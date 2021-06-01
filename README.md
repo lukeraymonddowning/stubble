@@ -191,7 +191,7 @@ You can do that using the replace method:
 $filename = (new Stubble)->replace("path/to/your/{{ file | kebab }}.php", ['file' => $this->argument('name')]);
 ```
 
-> Tip! When using the `publish` command, you can use tags directly in the $destinationPath argument for no sweat 
+> Tip! When using the `publish` method, you can use tags directly in the $destinationPath argument for no sweat 
 > dynamic filenames.
 
 ```php
