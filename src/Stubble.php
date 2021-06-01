@@ -2,9 +2,9 @@
 
 namespace Lukeraymonddowning\Stubble;
 
-use File;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Enumerable;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 class Stubble

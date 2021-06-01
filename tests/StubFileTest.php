@@ -5,7 +5,7 @@ namespace Lukeraymonddowning\Stubble\Tests;
 use Illuminate\Support\Facades\File;
 use Lukeraymonddowning\Stubble\Stubble;
 
-class StubFileTest extends TestCase
+class StubFileTest extends \Orchestra\Testbench\TestCase
 {
     public function test_it_can_return_a_stubbed_file()
     {

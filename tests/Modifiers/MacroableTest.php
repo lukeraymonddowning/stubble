@@ -2,10 +2,10 @@
 
 namespace Lukeraymonddowning\Stubble\Tests\Modifiers;
 
+use Illuminate\Support\Str;
 use Lukeraymonddowning\Stubble\Modifier;
 use Lukeraymonddowning\Stubble\Stubble;
 use Lukeraymonddowning\Stubble\Tests\TestCase;
-use Str;
 
 class MacroableTest extends TestCase
 {

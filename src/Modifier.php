@@ -2,8 +2,8 @@
 
 namespace Lukeraymonddowning\Stubble;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Macroable;
-use Str;
 
 class Modifier
 {

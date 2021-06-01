@@ -2,6 +2,6 @@
 
 namespace Lukeraymonddowning\Stubble\Tests;
 
-class TestCase extends \Orchestra\Testbench\TestCase
+abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
 }
