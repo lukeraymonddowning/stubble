@@ -88,6 +88,15 @@ pipe `|` character.
 
 The `camel` modifier transforms the given value to camelCase.
 
+### basename
+
+The `basename` modifier will return the basename of a given class string:
+
+```php
+// class: Some\Deeply\Nested\Thing
+class {{ class | basename }} {} // class Thing {}
+```
+
 ### kebab
 
 The `kebab` modifier transforms the given value to kebab-case.

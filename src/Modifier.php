@@ -57,4 +57,9 @@ class Modifier
             ->replace('.-', '.')
             ->__toString();
     }
+
+    public function basename($content)
+    {
+        return class_basename($content);
+    }
 }
