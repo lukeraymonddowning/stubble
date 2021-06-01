@@ -59,7 +59,7 @@ Here we have to create 2 replacement values: "class" and "view", but the fact of
 class {{ class | pascal }} extends Component {
 
     public function render() {
-        return view({{ class | kebab }});
+        return view('{{ class | kebab }}');
     }
 
 }
