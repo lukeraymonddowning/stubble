@@ -28,6 +28,7 @@ class PendingReplacement
     public function modify($value)
     {
         $modifier = new Modifier();
+
         return collect($this->modifiers)->reduce(fn ($value, $mod) => $modifier->$mod($value), $value);
     }
 }

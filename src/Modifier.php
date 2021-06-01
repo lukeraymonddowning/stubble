@@ -62,4 +62,12 @@ class Modifier
     {
         return class_basename($content);
     }
+
+    public function classname($content)
+    {
+        return Str::of($this->view($content))
+            ->explode(".")
+            ->map(fn($part) => Str::studly($part))
+            ->join("\\");
+    }
 }

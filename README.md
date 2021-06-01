@@ -97,6 +97,18 @@ class {{ class | basename }} {} // class Thing {}
 
 The `camel` modifier transforms the given value to camelCase.
 
+### classname
+
+The `classname` modifier transforms a string to its fully qualified class name if possible:
+
+```php
+// class: Some/Class/With/Forward/Slashes
+use {{ class | classname }} // Some\Class\With\Forward\Slashes
+
+// view: some-nested.view
+use {{ view | classname }} // SomeNested\View
+```
+
 ### kebab
 
 The `kebab` modifier transforms the given value to kebab-case.
