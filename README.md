@@ -116,6 +116,16 @@ The `studly` modifier transforms the given value to StudlyCase.
 
 The `upper` modifier transforms the given value to UPPERCASE.
 
+## Chaining multiple Modifiers
+
+Modifiers can be chained together to perform multiple transformations. They will be applied in order from left to right.
+Modifiers are separated using the `|` character:
+
+```php
+// .stub
+Welcome to the {{ jungle | upper | plural }}! // Welcome to the JUNGLES!
+```
+
 ## Adding new Modifiers
 
 The `Lukeraymonddowning\Stubble\Modifier` class is `Macroable`, allowing you to define your very own modifiers. We 
