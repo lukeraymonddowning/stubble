@@ -52,7 +52,7 @@ class Modifier
     public function view($content)
     {
         return Str::of($content)
-            ->replace("\\", ".")
+            ->replace(["\\", "/"], ".")
             ->kebab()
             ->replace(".-", ".")
             ->__toString();

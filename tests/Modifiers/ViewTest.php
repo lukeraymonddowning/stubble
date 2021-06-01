@@ -21,6 +21,7 @@ class ViewTest extends TestCase
     {
         return [
             ['{{ value | view }}', ['value' => 'SomeClassName\\HelloWorld\\Welcome'], 'some-class-name.hello-world.welcome'],
+            ['{{ value | view }}', ['value' => 'SomeClassName/HelloWorld/Welcome'], 'some-class-name.hello-world.welcome'],
             ['{{ value | view }}', ['value' => 'Some Class Name'], 'some-class-name'],
             ['{{ value | view }}', ['value' => 'some_class_name.test'], 'some_class_name.test'],
         ];
